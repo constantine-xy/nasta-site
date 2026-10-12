@@ -1,0 +1,74 @@
+:root {
+  color-scheme: light dark;
+  --paper: #f5f2ec;
+  --card: #ffffff;
+  --ink: #17120a;
+  --quiet: #6b6558;
+  --rule: #dcd6c9;
+  --accent: #9a5b00;
+  --lit: #ffa21a;
+  --unlit: #1f1206;
+  --housing: #121212;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --paper: #0b0b0b; --card: #1a1a1a; --ink: #f4efe6; --quiet: #a39b8c; --rule: #2e2a24; --accent: #ffa21a; }
+}
+* { box-sizing: border-box; }
+html { background: var(--paper); }
+body {
+  margin: 0; padding: 0 20px 64px;
+  font: 17px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: var(--ink); background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+  overflow-wrap: break-word;
+}
+main { max-width: 40rem; margin: 0 auto; }
+header { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 48px 0 8px; }
+nav { display: flex; gap: 20px; margin-left: auto; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); font-weight: 600; }
+.brand img { display: block; width: 29px; height: 29px; flex: none; }
+.landing { text-align: center; }
+.hero { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 72px; }
+.hero img { display: block; width: 112px; height: 112px; flex: none; }
+.hero .name { font-size: 1.5rem; font-weight: 600; letter-spacing: -0.01em; }
+h1 { font-size: 2rem; line-height: 1.15; letter-spacing: -0.01em; margin: 32px 0 6px; }
+h2 { font-size: 1.15rem; margin: 36px 0 8px; }
+p, li { margin: 0 0 12px; }
+ul { padding-left: 1.2rem; }
+.lead { font-size: 1.15rem; color: var(--ink); }
+.meta { color: var(--quiet); font-size: 0.95rem; margin-bottom: 28px; }
+.glance { background: var(--card); border-radius: 14px; padding: 16px 20px 4px; margin: 0 0 8px; }
+.glance h2 { margin: 0 0 8px; }
+.glance ul { margin: 0; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 40px 0 20px; }
+footer { color: var(--quiet); font-size: 0.9rem; }
+footer p { margin: 0 0 6px; }
+.group { background: var(--card); border-radius: 14px; margin: 24px 0; overflow: hidden; text-align: left; }
+.landing .group { max-width: 17rem; margin: 28px auto 24px; }
+.group a { position: relative; display: flex; align-items: center; justify-content: center; text-align: center; padding: 13px 40px; color: var(--ink); }
+.group a + a { border-top: 1px solid var(--rule); }
+.group a::after { content: "\203a"; position: absolute; right: 16px; color: var(--quiet); font-size: 1.4rem; line-height: 1; }
+.group a:hover { background: var(--paper); text-decoration: none; }
+.cards { list-style: none; padding: 0; margin: 0; }
+.cards li { background: var(--card); border-radius: 14px; padding: 14px 16px; margin: 0 0 8px; }
+.cards strong { display: block; margin-bottom: 2px; }
+
+/* A sign: lit dots on a dark housing, as on the platform. Decorative only. */
+.sign {
+  display: inline-block; max-width: 100%; margin: 28px auto 0; padding: 14px 20px 12px; border-radius: 12px; text-align: left;
+  background:
+    radial-gradient(circle at center, var(--unlit) 0 38%, transparent 42%) 0 0 / 7px 7px,
+    linear-gradient(#212121, #121212);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  color: var(--lit);
+  font: 600 1.15rem/1.5 ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  text-shadow: 0 0 6px rgba(255, 162, 26, 0.55);
+}
+.sign span { display: block; }
+.sign .dim { font-size: 0.8rem; font-weight: 500; opacity: 0.85; }
+.landing .sign { display: block; width: fit-content; margin-left: auto; margin-right: auto; }
+@media (max-width: 400px) { .sign { letter-spacing: 0.06em; font-size: 1rem; } }
